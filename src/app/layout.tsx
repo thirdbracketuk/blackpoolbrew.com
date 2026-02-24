@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Create Bracketui App",
-  description: "Bolierplace template for create-bracketui-app",
+  title: "BlacpoolBrew: Your Wellness Drink",
+  description: "Ready to boost immunity without any side effects? Get your free sample now.",
 };
 
 export default function RootLayout({
