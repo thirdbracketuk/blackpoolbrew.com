@@ -485,7 +485,7 @@ export default function Home() {
         {/* Cards slider */}
         <div className="w-full overflow-hidden">
           <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            <div className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-gray-50 dark:bg-gray-900 snap-center flex-none w-[calc(100%-16px)] sm:w-[calc(50%-6px)] lg:w-[calc(33.333%-8px)] text-center">
+            <div className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-gray-50 dark:bg-gray-900 snap-center flex-none w-[calc(85%-8px)] sm:w-[calc(50%-6px)] lg:w-[calc(33.333%-8px)] text-center">
               <FaHeartbeat size={28} color="#bd3b22" />
               <p className="text-sm font-medium">
                 Boosts your immune system and supports everyday health
@@ -493,14 +493,14 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-gray-50 dark:bg-gray-900 snap-center flex-none w-[calc(100%-16px)] sm:w-[calc(50%-6px)] lg:w-[calc(33.333%-8px)] text-center">
+            <div className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-gray-50 dark:bg-gray-900 snap-center flex-none w-[calc(85%-8px)] sm:w-[calc(50%-6px)] lg:w-[calc(33.333%-8px)] text-center">
               <FaMugHot size={28} color="#eca876" />
               <p className="text-sm font-medium">
                 Perfect brewed in hot water or blended with your favourite tea.
               </p>
             </div>
 
-            <div className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-gray-50 dark:bg-gray-900 snap-center flex-none w-[calc(100%-16px)] sm:w-[calc(50%-6px)] lg:w-[calc(33.333%-8px)] text-center">
+            <div className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-gray-50 dark:bg-gray-900 snap-center flex-none w-[calc(85%-8px)] sm:w-[calc(50%-6px)] lg:w-[calc(33.333%-8px)] text-center">
               <FaLeaf size={28} color="#4a9e6b" />
               <p className="text-sm font-medium">
                 100% natural ingredients — no chemicals, no side effects, ever.
@@ -511,7 +511,7 @@ export default function Home() {
 
         {/* Free Promo CTA */}
         <div className="flex flex-col items-center gap-3 w-full">
-          <p className="text-sm font-medium" style={{ color: "#bd3b22" }}>
+          <p className="text-sm font-medium" style={{ color: "#d4937a" }}>
             🎁 Free samples available for a limited time!
           </p>
           <a
