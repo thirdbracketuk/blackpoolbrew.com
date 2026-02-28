@@ -1,3 +1,542 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Design Tokens
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+:root {
+  --clr-warm: #eca876;
+  --clr-red: #bd3b22;
+  --clr-orange: #cc3719;
+  --clr-gold: #f5c278;
+
+  --surface: #faf6f1;
+  --surface-card: #f3ece4;
+  --surface-inset: #ece4d8;
+  --border: rgba(0, 0, 0, 0.07);
+
+  --text-primary: #1c0d06;
+  --text-secondary: #5c3d2a;
+  --text-muted: #9c7a62;
+
+  --hero-text: #1c0d06;
+  --hero-logo-filter: invert(1) sepia(1) saturate(0) brightness(0.15);
+  --btn-shadow: rgba(189, 59, 34, 0.35);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  font-family: "DM Sans", system-ui, sans-serif;
+}
+
+.dark {
+  --surface: #0e0806;
+  --surface-card: #181008;
+  --surface-inset: #221610;
+  --border: rgba(255, 255, 255, 0.06);
+
+  --text-primary: #f0e6dc;
+  --text-secondary: #c0a08a;
+  --text-muted: #806050;
+
+  --hero-text: #ffffff;
+  --hero-logo-filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.5));
+  --btn-shadow: rgba(189, 59, 34, 0.5);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Base
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Page wrapper
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.page {
+  background-color: var(--surface);
+  min-height: 100svh;
+  transition: background-color 0.3s var(--ease-out);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Hero
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Noise grain overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* ── Skyline ─────────────────────────────────────────── */
+/*
+  The SVG viewBox is 4001×3000 but the actual skyline strokes
+  live in roughly the bottom 40% of that tall canvas.
+  As a background-image we can anchor to the bottom edge so
+  only that portion is visible — an <img> would render the
+  full canvas height and push the strokes far out of view.
+*/
+.hero-skyline-wrapper {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  opacity: 0.85;
+  transition: opacity 0.4s var(--ease-out);
+  /* on mobile the wide SVG renders tiny — force a minimum visual height */
+  min-height: 180px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (min-width: 640px) {
+  .hero-skyline-wrapper {
+    min-height: unset;
+    object-fit: unset;
+  }
+}
+
+.dark .hero-skyline-wrapper {
+  opacity: 0.6;
+}
+
+/* ── Hero content ────────────────────────────────────── */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: clamp(2rem, 5vw, 4rem) 1rem clamp(3rem, 6vw, 5rem);
+  animation: hero-rise 1.1s var(--ease-out) both;
+}
+
+.hero-logo {
+  width: auto;
+  height: clamp(5rem, 9vw, 7rem);
+  filter: var(--hero-logo-filter);
+  animation: hero-rise 1.1s 0.1s var(--ease-out) both;
+}
+
+.hero-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  color: var(--hero-text);
+  text-align: center;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-shadow: none;
+  animation: hero-rise 1.1s 0.15s var(--ease-out) both;
+}
+
+.hero-subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 300;
+  color: color-mix(in srgb, var(--hero-text) 75%, transparent);
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  animation: hero-rise 1.1s 0.22s var(--ease-out) both;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Content area
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.content {
+  max-width: 74rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Cards
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  transition:
+    background-color 0.3s var(--ease-out),
+    border-color 0.3s var(--ease-out);
+}
+
+.card-intro {
+  text-align: center;
+}
+
+.card-intro p {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+/* ── Features grid ───────────────────────────────────── */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 1rem;
+}
+
+.feature-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  transition: background-color 0.3s var(--ease-out);
+}
+
+.feature-icon {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.feature-icon--green {
+  background-color: rgba(74, 158, 107, 0.12);
+  color: #4a9e6b;
+}
+
+.feature-icon--red {
+  background-color: rgba(189, 59, 34, 0.1);
+  color: var(--clr-red);
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+}
+
+/* ── Section title ───────────────────────────────────── */
+.section-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--clr-warm);
+  text-align: center;
+  letter-spacing: -0.01em;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.dark .section-title {
+  text-shadow: 0 0 40px rgba(236, 168, 118, 0.2);
+}
+
+/* ── Instructions ────────────────────────────────────── */
+.instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.instruction-step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--clr-red), var(--clr-orange));
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.15rem;
+}
+
+.instruction-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.instruction-text strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.instruction-note {
+  margin-top: 0.25rem;
+  padding: 0.875rem 1.1rem;
+  border-radius: 0.5rem;
+  background-color: var(--surface-inset);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  border-left: 3px solid var(--clr-orange);
+}
+
+.instruction-note strong {
+  color: var(--text-secondary);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CTA
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: clamp(1rem, 3vw, 2rem) 0;
+}
+
+.cta-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--clr-warm);
+  letter-spacing: 0.03em;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--clr-red) 0%, #9c2a12 100%);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+  text-decoration: none;
+  box-shadow:
+    0 4px 20px var(--btn-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition:
+    transform 0.2s var(--ease-out),
+    box-shadow 0.2s var(--ease-out);
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    0 8px 32px var(--btn-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Options carousel
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.options-section {
+  overflow: hidden;
+}
+
+.options-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.options-track::-webkit-scrollbar {
+  display: none;
+}
+
+.option-card {
+  scroll-snap-align: center;
+  flex: 0 0 calc(85% - 0.5rem);
+  max-width: 22rem;
+  background-color: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s var(--ease-out);
+}
+
+.option-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-red), var(--clr-warm));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease-out);
+}
+
+.option-card:hover::before {
+  transform: scaleX(1);
+}
+
+@media (min-width: 640px) {
+  .option-card {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .option-card {
+    flex: 0 0 calc(33.333% - 0.667rem);
+    max-width: none;
+  }
+}
+
+.option-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.option-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.option-desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Divider
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border),
+    var(--border),
+    transparent
+  );
+  border: none;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Footer
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Animations
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s var(--ease-out) both;
+}
+
+.animate-stagger > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.animate-stagger > *:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.animate-stagger > *:nth-child(3) {
+  animation-delay: 0.18s;
+}
+.animate-stagger > *:nth-child(4) {
+  animation-delay: 0.24s;
+}
+.animate-stagger > *:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
