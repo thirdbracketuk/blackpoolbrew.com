@@ -17,13 +17,13 @@ export default function BrewPage() {
 
         <div className="hero-content">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="Blackpool Brew"
             width={500}
             height={500}
             className="hero-logo "
           />
-          <h1 className="hero-title bg-linear-to-r from-[#eb3314] to-orange-500 bg-clip-text text-transparent filter drop-shadow-md">
+          <h1 className="hero-title ">
             The&nbsp;&apos;Blackpool&nbsp;Brew!&apos;
           </h1>
           <p className="hero-subtitle">
