@@ -142,7 +142,7 @@ body {
 
 .hero-logo {
   width: auto;
-  height: clamp(5rem, 9vw, 7rem);
+  height: clamp(10rem, 15vw, 14rem);
 
   animation: hero-rise 1.1s 0.1s var(--ease-out) both;
 }

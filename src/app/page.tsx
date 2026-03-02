@@ -17,7 +17,7 @@ export default function BrewPage() {
 
         <div className="hero-content">
           <Image
-            src="/newlogo.svg"
+            src="/logo.svg"
             alt="Blackpool Brew"
             width={500}
             height={500}
