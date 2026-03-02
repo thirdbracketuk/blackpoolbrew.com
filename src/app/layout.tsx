@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "BlacpoolBrew: Your Wellness Drink",
-  description: "Ready to boost immunity without any side effects? Get your free sample now.",
+  title: "Blacpool Brew: A Natural Aromatic Blend of Ancient Herbs & Spices",
+  description: "Fragrant, warming and pungent. Specially crafted to nourish your body and instantly delight your senses. Get your free sample now.",
 };
 
 export default function RootLayout({
