@@ -21,9 +21,9 @@ export default function BrewPage() {
             alt="Blackpool Brew"
             width={500}
             height={500}
-            className="hero-logo"
+            className="hero-logo "
           />
-          <h1 className="hero-title">
+          <h1 className="hero-title bg-linear-to-r from-[#eb3314] to-orange-500 bg-clip-text text-transparent filter drop-shadow-md">
             The&nbsp;&apos;Blackpool&nbsp;Brew!&apos;
           </h1>
           <p className="hero-subtitle">
