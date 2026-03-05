@@ -114,7 +114,7 @@ body {
   opacity: 0.85;
   transition: opacity 0.4s var(--ease-out);
   /* on mobile the wide SVG renders tiny — force a minimum visual height */
-  min-height: 120px;
+  min-height: 100px;
   object-fit: cover;
   object-position: center top;
 }
@@ -126,9 +126,9 @@ body {
   }
 }
 
-.dark .hero-skyline-wrapper {
+/* .dark .hero-skyline-wrapper {
   opacity: 0.6;
-}
+} */
 
 /* ── Hero content ────────────────────────────────────── */
 .hero-content {

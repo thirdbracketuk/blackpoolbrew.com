@@ -17,10 +17,10 @@ export default function BrewPage() {
 
         <div className="hero-content">
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             alt="Blackpool Brew"
-            width={500}
-            height={500}
+            width={1800}
+            height={1800}
             className="hero-logo "
           />
           <h1 className="hero-title ">
