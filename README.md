@@ -2,6 +2,8 @@
 
 > The official website for **Blackpool Brew** — a handcrafted, caffeine-free herbal blend born in Blackpool, UK. Brew your way to wellness.
 
+![Blackpool Brew Cover](https://raw.githubusercontent.com/thirdbracketuk/blackpoolbrew.com/main/public/cover.png)
+
 **Live site:** [blackpoolbrew.com](https://blackpoolbrew.com)
 
 ---
