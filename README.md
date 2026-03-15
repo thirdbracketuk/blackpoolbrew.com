@@ -1,50 +1,84 @@
-# MyStoreo
+# 🫖 Blackpool Brew — blackpoolbrew.com
 
-A modern food ordering and restaurant management application developed by Third Bracket Ltd.
+> The official website for **Blackpool Brew** — a handcrafted, caffeine-free herbal blend born in Blackpool, UK. Brew your way to wellness.
 
-## Overview
+**Live site:** [blackpoolbrew.com](https://blackpoolbrew.com)
 
-**MyStoreo** is a full-stack food ordering and restaurant management platform built with cutting-edge technologies. It provides an intuitive interface for customers to place food orders and empowers restaurants with powerful management tools to streamline operations.
+---
 
-Previously known as OrderKI, this project has been reimagined as MyStoreo to better reflect its comprehensive features for both customers and restaurant operators.
+## About the Product
 
-## Features
+**Blackpool Brew** is a thoughtfully crafted herbal blend made from a carefully selected combination of natural ingredients:
 
-### For Customers
-- 🍽️ Browse restaurants and menus
-- 🛒 Easy-to-use ordering interface
-- 📍 Real-time order tracking
-- 💳 Secure payment processing
-- 📋 Order history and saved preferences
-- 📱 Multi-platform support (web and mobile-optimized)
+> Fennel Seeds · Nutmeg · Cinnamon · Peppercorn · Black Cumin Seeds · Nigella Seeds · Clove · Cardamom · Star Anise · Black Onion Seeds · Bay Leaves · Ginger
 
-### For Restaurants
-- 📊 Comprehensive order management dashboard
-- 👥 Customer relationship management
-- 📈 Analytics and reporting
-- ⚙️ Menu and inventory management
-- 👨‍💼 Staff and role-based access control
-- 🔔 Real-time order notifications
+- ✅ Caffeine-free
+- ✅ No added sugars
+- ✅ No artificial colouring or preservatives
+- ✅ Vegan & Vegetarian friendly
 
-## Technology Stack
+### How to Brew
 
-### Frontend
-- **Framework**: Next.js (React)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS with custom CSS variables
-- **UI Components**: Custom component library
-- **Testing**: Playwright for E2E testing, Vitest for unit tests
+Using **¼ teaspoon** of the blend, pour freshly boiled water to infuse. Add sugar or honey to taste. Stir and allow most of the blend to gradually settle at the bottom. Enjoy.
 
-### Backend
-- **CMS/Database**: Payload CMS
-- **Database**: MongoDB (with Mongoose adapter)
-- **API**: Custom REST endpoints
-- **Authentication**: JWT-based auth with role-based access control (RBAC)
+> **Note:** Fragments of the blend are safe to consume. Discard the build-up left at the bottom. For a smoother finish, strain the mixture entirely to remove the loose blend.
 
-### Development Tools
-- **Package Manager**: pnpm
-- **Linting**: ESLint
-- **Code Formatting**: Prettier
-- **Type Checking**: TypeScript compiler
+### Serving Options
 
-## Project Structure
+1. **Chilled** — Let the brew cool and refrigerate for a cold/iced version.
+2. **Blended** — Mix into your usual beverage to enhance flavour.
+3. **Culinary** — Add to dishes for aroma and depth of flavour.
+
+---
+
+## About This Project
+
+This website was built by **[Third Bracket Ltd](https://thirdbracket.co.uk)** — a UK-based web design and branding agency — as the digital home for the Blackpool Brew brand.
+
+The project was scaffolded using the **[BracketUI CLI](https://www.npmjs.com/package/@thirdbracket/bracketui)** — Third Bracket's own component library and project scaffolding tool built on top of Next.js and Tailwind CSS.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | [Next.js](https://nextjs.org) (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Component Library | [`@thirdbracket/bracketui`](https://www.npmjs.com/package/@thirdbracket/bracketui) |
+| Deployment | [Vercel](https://vercel.com) |
+
+---
+
+## Built with BracketUI
+
+This project was bootstrapped and built using **BracketUI** — a proprietary component library and CLI tool developed by Third Bracket Ltd. BracketUI provides a consistent design system, pre-built components, and project scaffolding tailored for modern Next.js applications.
+
+```bash
+npx @thirdbracket/bracketui init
+```
+
+📦 npm: [`@thirdbracket/bracketui`](https://www.npmjs.com/package/@thirdbracket/bracketui)
+
+---
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Developed by
+
+**[Third Bracket Ltd](https://thirdbracket.co.uk)** — Web Design & Branding Agency, UK.
+
+> Building clean, scalable digital products for forward-thinking brands.
