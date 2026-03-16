@@ -1,18 +1,24 @@
 /** @type {import('tailwindcss').Config} */
-
 import { bracketuiPlugin } from "@thirdbracket/bracketui";
 
-export default {
+const config = {
   darkMode: "class",
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
-
     // Path to Bracketui component library
-    "../../packages/bracketui/src/**/*.{js,ts,jsx,tsx}", // During development. You can safely remove this line.
-    "./node_modules/@thirdbracket/bracketui/**/*.{js,ts,jsx,tsx}", // When installed from npm
+    "../../packages/bracketui/src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@thirdbracket/bracketui/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        anton: ["var(--font-anton)", "sans-serif"],
+        satisfy: ["var(--font-satisfy)", "cursive"],
+        outfit: ["var(--font-outfit)", "sans-serif"],
+      },
+    },
   },
   plugins: [bracketuiPlugin],
 };
+
+export default config;

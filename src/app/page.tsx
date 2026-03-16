@@ -451,7 +451,7 @@ export default function BrewPage() {
                 className="navbar-logo-img"
               />
             </div>
-            <span className="navbar-brand-text">Blackpool Brew</span>
+            <span className="navbar-brand-text ">Blackpool Brew</span>
           </a>
           <div className="navbar-links">
             {NAV_LINKS.map((l) => (
@@ -461,9 +461,8 @@ export default function BrewPage() {
             ))}
           </div>
           <div className="navbar-actions">
-            <div className="h-3/4">
-              <ThemeToggle />
-            </div>
+            <ThemeToggle />
+
             <a
               href="https://wa.me/447507155382?text=Hi%2C%20I%27d%20like%20to%20claim%20my%20free%20Blackpool%20Brew%20sample!"
               target="_blank"

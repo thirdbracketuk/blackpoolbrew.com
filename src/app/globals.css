@@ -91,7 +91,7 @@ body {
     var(--hero-panel-bg2) 100%
   );
   /* Push below floating navbar (56px height + 1rem top + 0.5rem gap) */
-  padding-top: 5rem;
+  padding-top: 4.5rem;
   transition: background 0.3s var(--ease-out);
 }
 
@@ -102,9 +102,10 @@ body {
 /* Skyline — exactly as before */
 .hero-skyline-wrapper {
   display: block;
-  width: auto;
-  max-width: clamp(300px, 60vw, 600px);
-  height: 80px;
+  width: 100%;
+  padding-top: 1rem;
+  max-width: clamp(450px, 60vw, 600px);
+  height: auto;
   margin: 0 auto;
   pointer-events: none;
   mix-blend-mode: multiply;
@@ -216,14 +217,14 @@ body {
 }
 
 .hero-logo {
-  width: min(75vw, 30rem);
+  width: min(50vw, 20rem);
   height: auto;
   display: block;
 }
 
 @media (min-width: 900px) {
   .hero-logo {
-    width: min(100%, 34rem);
+    width: min(100%, 30rem);
   }
 }
 
