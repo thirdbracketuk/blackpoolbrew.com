@@ -407,15 +407,17 @@ import {
 const INGREDIENTS = [
   "Fennel Seeds",
   "Nutmeg",
+  "White Peppercorn",
+  "Black Peppercorn",
   "Cinnamon",
-  "Peppercorn",
   "Black Cumin Seeds",
-  "Nigella Seeds",
-  "Clove",
-  "Cardamom",
+  "Cloves",
+  "Green Cardamom",
+  "Black Cardamom",
   "Star Anise",
-  "Black Onion Seeds",
+  "Mace",
   "Bay Leaves",
+  "Nigella Seeds",
   "Ginger",
 ];
 
@@ -435,18 +437,25 @@ const INGREDIENT_CARDS = [
     desc: "A natural relaxant that eases stress, supports sleep and lifts mood.",
   },
   {
+    name: "White Peppercorn",
+    icon: "⚪",
+    color: "#9a8a70",
+    benefit: "Gentle Heat",
+    desc: "Milder than black pepper, adds gentle warmth and aids digestion subtly.",
+  },
+  {
+    name: "Black Peppercorn",
+    icon: "⚫",
+    color: "#555",
+    benefit: "Boosts Absorption",
+    desc: "Enhances the bioavailability of all other nutrients in the blend.",
+  },
+  {
     name: "Cinnamon",
     icon: "🍂",
     color: "#C04030",
     benefit: "Balances Blood Sugar",
     desc: "Helps regulate blood sugar levels and improves insulin sensitivity.",
-  },
-  {
-    name: "Peppercorn",
-    icon: "⚫",
-    color: "#555",
-    benefit: "Boosts Absorption",
-    desc: "Enhances the bioavailability of all other nutrients in the blend.",
   },
   {
     name: "Black Cumin Seeds",
@@ -456,25 +465,25 @@ const INGREDIENT_CARDS = [
     desc: "Powerful anti-inflammatory properties that strengthen the immune system.",
   },
   {
-    name: "Nigella Seeds",
-    icon: "💜",
-    color: "#6b4fa0",
-    benefit: "Antioxidant Rich",
-    desc: "Packed with thymoquinone, a potent antioxidant that fights free radicals.",
-  },
-  {
-    name: "Clove",
+    name: "Cloves",
     icon: "🌸",
     color: "#8B3A62",
     benefit: "Natural Antiseptic",
     desc: "Contains eugenol — a powerful antiseptic that supports oral and gut health.",
   },
   {
-    name: "Cardamom",
+    name: "Green Cardamom",
     icon: "💚",
     color: "#3a8a5a",
     benefit: "Freshens Breath",
     desc: "Detoxifies the body and naturally freshens breath with every sip.",
+  },
+  {
+    name: "Black Cardamom",
+    icon: "🖤",
+    color: "#4a3a2a",
+    benefit: "Respiratory Health",
+    desc: "Traditionally used to support respiratory health and ease congestion.",
   },
   {
     name: "Star Anise",
@@ -484,11 +493,11 @@ const INGREDIENT_CARDS = [
     desc: "Contains shikimic acid — a key compound used in antiviral medicines.",
   },
   {
-    name: "Black Onion Seeds",
-    icon: "🫘",
-    color: "#333",
-    benefit: "Heart Health",
-    desc: "Helps lower cholesterol and supports cardiovascular health over time.",
+    name: "Mace",
+    icon: "🟠",
+    color: "#d4720a",
+    benefit: "Brain Function",
+    desc: "Supports cognitive function and memory with its natural active compounds.",
   },
   {
     name: "Bay Leaves",
@@ -498,8 +507,15 @@ const INGREDIENT_CARDS = [
     desc: "Rich in compounds that reduce inflammation and support joint health.",
   },
   {
+    name: "Nigella Seeds",
+    icon: "💜",
+    color: "#6b4fa0",
+    benefit: "Antioxidant Rich",
+    desc: "Packed with thymoquinone, a potent antioxidant that fights free radicals.",
+  },
+  {
     name: "Ginger",
-    icon: "🫛",
+    icon: "🟡",
     color: "#d4820a",
     benefit: "Warms & Energises",
     desc: "Stimulates circulation, eases nausea and delivers a warming natural energy boost.",
@@ -627,14 +643,14 @@ export default function BrewPage() {
             </h1>
             <p className="hero-desc">
               A warming aromatic blend of{" "}
-              <strong>12 ancient herbs &amp; spices</strong>, crafted to nourish
+              <strong>14 ancient herbs &amp; spices</strong>, crafted to nourish
               your body and awaken your senses — with a naturally spicy kick and
               zero caffeine.
             </p>
 
             {/* Ingredient pills — auto-scrolling marquee */}
-            <div className="hero-ingredients">
-              <p className="hero-ingredients-label">12 Natural Ingredients</p>
+            <div className="hero-ingredients" id="ingredients">
+              <p className="hero-ingredients-label">14 Natural Ingredients</p>
               <div className="hero-pills-wrap">
                 <div className="hero-pills" aria-hidden="false">
                   {/* Duplicated for seamless infinite loop */}
@@ -681,9 +697,9 @@ export default function BrewPage() {
           <div className="section-header">
             <span className="section-tag">The Secret</span>
             <h2 className="section-title">
-              12 Ingredients.
+              14 Ingredients.
               <br />
-              12 Reasons to Brew.
+              14 Reasons to Brew.
             </h2>
             <p className="section-sub">
               Every spice in our blend was chosen for a purpose. Ancient wisdom,
@@ -885,7 +901,7 @@ export default function BrewPage() {
           </div>
           <div className="cta-banner-logo">
             <Image
-              src="/logo.png"
+              src="/icon.png"
               alt=""
               aria-hidden="true"
               width={600}
@@ -909,7 +925,7 @@ export default function BrewPage() {
             />
             <div>
               <p className="footer-brand-name">Blackpool Brew</p>
-              <p className="footer-brand-tag">Improve Your Lifestyle</p>
+              <p className="footer-brand-tag">A Better, Improved Lifestyle</p>
             </div>
           </div>
           <div className="footer-links">
