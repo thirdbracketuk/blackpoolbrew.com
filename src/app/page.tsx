@@ -419,6 +419,93 @@ const INGREDIENTS = [
   "Ginger",
 ];
 
+const INGREDIENT_CARDS = [
+  {
+    name: "Fennel Seeds",
+    icon: "🌿",
+    color: "#4a9e6b",
+    benefit: "Aids Digestion",
+    desc: "Soothes the digestive tract, reduces bloating and supports gut health naturally.",
+  },
+  {
+    name: "Nutmeg",
+    icon: "🫚",
+    color: "#b88820",
+    benefit: "Calms the Mind",
+    desc: "A natural relaxant that eases stress, supports sleep and lifts mood.",
+  },
+  {
+    name: "Cinnamon",
+    icon: "🍂",
+    color: "#C04030",
+    benefit: "Balances Blood Sugar",
+    desc: "Helps regulate blood sugar levels and improves insulin sensitivity.",
+  },
+  {
+    name: "Peppercorn",
+    icon: "⚫",
+    color: "#555",
+    benefit: "Boosts Absorption",
+    desc: "Enhances the bioavailability of all other nutrients in the blend.",
+  },
+  {
+    name: "Black Cumin Seeds",
+    icon: "🌱",
+    color: "#2a7a5a",
+    benefit: "Immune Support",
+    desc: "Powerful anti-inflammatory properties that strengthen the immune system.",
+  },
+  {
+    name: "Nigella Seeds",
+    icon: "💜",
+    color: "#6b4fa0",
+    benefit: "Antioxidant Rich",
+    desc: "Packed with thymoquinone, a potent antioxidant that fights free radicals.",
+  },
+  {
+    name: "Clove",
+    icon: "🌸",
+    color: "#8B3A62",
+    benefit: "Natural Antiseptic",
+    desc: "Contains eugenol — a powerful antiseptic that supports oral and gut health.",
+  },
+  {
+    name: "Cardamom",
+    icon: "💚",
+    color: "#3a8a5a",
+    benefit: "Freshens Breath",
+    desc: "Detoxifies the body and naturally freshens breath with every sip.",
+  },
+  {
+    name: "Star Anise",
+    icon: "⭐",
+    color: "#c09020",
+    benefit: "Anti-Viral Properties",
+    desc: "Contains shikimic acid — a key compound used in antiviral medicines.",
+  },
+  {
+    name: "Black Onion Seeds",
+    icon: "🫘",
+    color: "#333",
+    benefit: "Heart Health",
+    desc: "Helps lower cholesterol and supports cardiovascular health over time.",
+  },
+  {
+    name: "Bay Leaves",
+    icon: "🍃",
+    color: "#5a8a30",
+    benefit: "Anti-Inflammatory",
+    desc: "Rich in compounds that reduce inflammation and support joint health.",
+  },
+  {
+    name: "Ginger",
+    icon: "🫛",
+    color: "#d4820a",
+    benefit: "Warms & Energises",
+    desc: "Stimulates circulation, eases nausea and delivers a warming natural energy boost.",
+  },
+];
+
 const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Ingredients", href: "#ingredients" },
@@ -451,7 +538,7 @@ export default function BrewPage() {
                 className="navbar-logo-img"
               />
             </div>
-            <span className="navbar-brand-text ">Blackpool Brew</span>
+            <span className="navbar-brand-text">Blackpool Brew</span>
           </a>
           <div className="navbar-links">
             {NAV_LINKS.map((l) => (
@@ -462,7 +549,6 @@ export default function BrewPage() {
           </div>
           <div className="navbar-actions">
             <ThemeToggle />
-
             <a
               href="https://wa.me/447507155382?text=Hi%2C%20I%27d%20like%20to%20claim%20my%20free%20Blackpool%20Brew%20sample!"
               target="_blank"
@@ -547,7 +633,7 @@ export default function BrewPage() {
             </p>
 
             {/* Ingredient pills — auto-scrolling marquee */}
-            <div className="hero-ingredients" id="ingredients">
+            <div className="hero-ingredients">
               <p className="hero-ingredients-label">12 Natural Ingredients</p>
               <div className="hero-pills-wrap">
                 <div className="hero-pills" aria-hidden="false">
@@ -585,6 +671,48 @@ export default function BrewPage() {
           </div>
         </div>
       </header>
+
+      {/* ── Ingredients Benefits ─────────────────────────────── */}
+      <section
+        className="section section--ingredients-benefits"
+        id="ingredients"
+      >
+        <div className="section-inner">
+          <div className="section-header">
+            <span className="section-tag">The Secret</span>
+            <h2 className="section-title">
+              12 Ingredients.
+              <br />
+              12 Reasons to Brew.
+            </h2>
+            <p className="section-sub">
+              Every spice in our blend was chosen for a purpose. Ancient wisdom,
+              modern wellness.
+            </p>
+          </div>
+          <div className="ingredients-grid">
+            {INGREDIENT_CARDS.map((ing, i) => (
+              <div
+                key={ing.name}
+                className="ing-card"
+                style={
+                  { "--ing-color": ing.color, "--i": i } as React.CSSProperties
+                }
+              >
+                <div className="ing-card-icon-wrap">
+                  <span className="ing-card-icon">{ing.icon}</span>
+                  <div className="ing-card-ring" />
+                </div>
+                <div className="ing-card-body">
+                  <p className="ing-card-benefit">{ing.benefit}</p>
+                  <h3 className="ing-card-name">{ing.name}</h3>
+                  <p className="ing-card-desc">{ing.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── How to Brew ───────────────────────────────────────── */}
       <section className="section section--brew" id="brew">
@@ -781,7 +909,7 @@ export default function BrewPage() {
             />
             <div>
               <p className="footer-brand-name">Blackpool Brew</p>
-              <p className="footer-brand-tag">A Better, Improved Lifestyle</p>
+              <p className="footer-brand-tag">Improve Your Lifestyle</p>
             </div>
           </div>
           <div className="footer-links">
