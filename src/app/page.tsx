@@ -842,7 +842,7 @@ export default function BrewPage() {
             />
             <div>
               <p className="footer-brand-name">Blackpool Brew</p>
-              <p className="footer-brand-tag">A Better, Improved Lifestyle</p>
+              <p className="footer-brand-tag">Improve YourLifestyle</p>
             </div>
           </div>
           <div className="footer-links">
