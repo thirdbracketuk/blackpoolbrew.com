@@ -426,7 +426,7 @@ const INGREDIENT_CARDS = [
   { name: "Nutmeg",            icon: "🟤", color: "#b88820", benefit: "Calms the Mind",        desc: "A natural relaxant that eases stress, supports sleep and lifts mood." },
   { name: "White Peppercorn",  icon: "⚪", color: "#9a8a70", benefit: "Gentle Heat",           desc: "Milder than black pepper, adds gentle warmth and aids digestion subtly." },
   { name: "Black Peppercorn",  icon: "⚫", color: "#555",    benefit: "Boosts Absorption",     desc: "Enhances the bioavailability of all other nutrients in the blend." },
-  { name: "Cinnamon",          icon: "🍂", color: "#C04030", benefit: "Balances Blood Sugar",  desc: "Helps regulate blood sugar levels and improves insulin sensitivity." },
+  { name: "Cinnamon",          icon: "🪵", color: "#C04030", benefit: "Balances Blood Sugar",  desc: "Helps regulate blood sugar levels and improves insulin sensitivity." },
   { name: "Black Cumin Seeds", icon: "🌱", color: "#2a7a5a", benefit: "Immune Support",        desc: "Powerful anti-inflammatory properties that strengthen the immune system." },
   { name: "Cloves",            icon: "🌰", color: "#8B3A62", benefit: "Natural Antiseptic",    desc: "Contains eugenol — a powerful antiseptic that supports oral and gut health." },
   { name: "Green Cardamom",    icon: "🫛", color: "#3a8a5a", benefit: "Freshens Breath",       desc: "Detoxifies the body and naturally freshens breath with every sip." },
