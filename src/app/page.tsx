@@ -634,7 +634,7 @@ export default function BrewPage() {
           <div className="hero-copy-side">
             <span className="hero-origin">
               <span className="hero-origin-dot" />
-              Handcrafted in Blackpool, UK
+              100% Plant-Based, Handcrafted in Blackpool, UK
             </span>
             <h1 className="hero-headline">
               Brew Your Way
