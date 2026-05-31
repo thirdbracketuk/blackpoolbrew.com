@@ -102,7 +102,7 @@ export default function SciencePage() {
       />
 
       {/* ── The Micro-Dose Strategy ── */}
-      <section className="section section--brew">
+      <section id="microdose" className="section section--brew">
         <div className="section-inner">
           <div className="section-header">
             <span className="section-tag">The Precision</span>
@@ -148,7 +148,7 @@ export default function SciencePage() {
       </section>
 
       {/* ── Key Pathways ── */}
-      <section className="section section--why">
+      <section id="pathways" className="section section--why">
         <div className="section-inner">
           <div className="section-header">
             <span className="section-tag">Molecular Pathways</span>
