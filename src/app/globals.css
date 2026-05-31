@@ -2144,3 +2144,731 @@ body {
     transform: scale(1) rotate(0deg);
   }
 }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CHUNK 1 — Shared Inner Page Utilities
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* Spacer to push content below fixed navbar on inner pages */
+.page-top-spacer {
+  height: 5.5rem;
+}
+
+/* ── Page Hero (inner pages) ── */
+.page-hero {
+  background: linear-gradient(160deg, var(--hero-panel-bg) 0%, var(--hero-panel-bg2) 100%);
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 5vw, 4rem);
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s var(--ease-out);
+}
+
+.dark .page-hero {
+  background: linear-gradient(160deg, #0e0806 0%, #1a0c06 100%);
+}
+
+.page-hero-inner {
+  max-width: 56rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.page-hero-title {
+  font-family: var(--font-anton, "Anton"), system-ui, sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.05;
+  background: linear-gradient(135deg, #1a0d08 30%, #a83020 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .page-hero-title {
+  background: linear-gradient(135deg, #f2e8e0 40%, #d4907a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-hero-sub {
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  color: var(--text-muted);
+  max-width: 48ch;
+  line-height: 1.75;
+}
+
+/* ── Section CTA row (homepage preview sections) ── */
+.section-cta-row {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.section-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.65rem;
+  background: linear-gradient(135deg, var(--clr-terracotta) 0%, var(--clr-ember) 100%);
+  color: #fff;
+  font-family: var(--font-outfit, "Outfit"), system-ui, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(168, 48, 32, 0.35);
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+  white-space: nowrap;
+}
+
+.section-cta-btn:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 28px rgba(168, 48, 32, 0.45);
+}
+
+/* ── Inner page bottom nav ── */
+.inner-page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 5vw, 4rem);
+  border-top: 1px solid var(--border);
+  background: var(--surface-card);
+}
+
+.inner-page-nav-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--clr-terracotta);
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(192, 64, 48, 0.2);
+  background: rgba(192, 64, 48, 0.05);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.inner-page-nav-link:hover {
+  background: rgba(192, 64, 48, 0.1);
+  transform: translateY(-1px);
+}
+
+.dark .inner-page-nav-link {
+  color: var(--clr-rose);
+  border-color: rgba(212, 144, 122, 0.2);
+  background: rgba(212, 144, 122, 0.05);
+}
+
+/* ── Homepage ingredients preview pills ── */
+.preview-ing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.preview-ing-pill {
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 99px;
+  border: 1px solid rgba(160, 80, 50, 0.22);
+  background: rgba(160, 80, 50, 0.06);
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.preview-ing-pill--more {
+  border-color: var(--clr-terracotta);
+  background: rgba(192, 64, 48, 0.08);
+  color: var(--clr-terracotta);
+  font-weight: 600;
+}
+
+.dark .preview-ing-pill {
+  border-color: rgba(192, 64, 48, 0.28);
+  background: rgba(192, 64, 48, 0.07);
+  color: rgba(242, 232, 224, 0.6);
+}
+
+.dark .preview-ing-pill--more {
+  color: var(--clr-rose);
+  border-color: rgba(212, 144, 122, 0.4);
+  background: rgba(212, 144, 122, 0.08);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CHUNK 2 — About Page
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .about-split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-split-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.about-body {
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.dark .about-body {
+  color: rgba(242, 232, 224, 0.68);
+}
+
+.about-split-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-logo-wrap {
+  border-radius: 50%;
+  background: #2c1208;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.dark .about-logo-wrap {
+  background: #1a0a04;
+}
+
+.about-logo-img {
+  width: min(100%, 18rem);
+  height: auto;
+  display: block;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CHUNK 3 — Benefits Page
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.benefit-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.benefit-block-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.benefit-icon {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.benefit-title {
+  font-family: var(--font-anton, "Anton"), system-ui, sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--clr-terracotta);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.dark .benefit-title {
+  color: var(--clr-rose);
+}
+
+.benefit-headline {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.benefit-block-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .benefit-block-body {
+    grid-template-columns: 1fr 280px;
+    align-items: start;
+  }
+}
+
+.benefit-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.benefit-compound-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+.benefit-compound-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.benefit-compound-value {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--clr-terracotta);
+}
+
+.dark .benefit-compound-value {
+  color: var(--clr-rose);
+}
+
+.benefit-ing-col {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.benefit-ing-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.benefit-ing-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CHUNK 4 — Ingredients Page
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.ing-full-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  gap: 1.25rem;
+}
+
+.ing-full-card {
+  position: relative;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden;
+  transition:
+    transform 0.2s var(--ease-out),
+    box-shadow 0.2s var(--ease-out),
+    border-color 0.2s;
+}
+
+/* Top accent line using ingredient colour */
+.ing-full-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ing-color, var(--clr-terracotta));
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.ing-full-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.07);
+  border-color: rgba(192, 64, 48, 0.2);
+}
+
+.ing-full-card:hover::before {
+  opacity: 1;
+}
+
+.ing-full-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ing-full-num {
+  font-family: var(--font-anton, "Anton"), system-ui, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.ing-full-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.ing-full-tier {
+  margin-left: auto;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 99px;
+  border: 1px solid;
+}
+
+.ing-full-name {
+  font-family: var(--font-anton, "Anton"), system-ui, sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  transition: color 0.3s;
+}
+
+.ing-full-role {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clr-terracotta);
+}
+
+.dark .ing-full-role {
+  color: var(--clr-rose);
+}
+
+.ing-full-desc {
+  font-size: 0.88rem;
+  line-height: 1.72;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.ing-full-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+.ing-full-pillar,
+.ing-full-compound {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Scroll reveal for ingredient cards */
+@supports (animation-timeline: view()) {
+  .ing-full-card {
+    animation: reveal-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CHUNK 5 — Science Page
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.science-table-wrap {
+  overflow-x: auto;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+}
+
+.science-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  background: var(--surface-card);
+}
+
+.science-table thead {
+  background: var(--surface-inset);
+}
+
+.science-table th {
+  padding: 0.9rem 1.25rem;
+  text-align: left;
+  font-family: var(--font-anton, "Anton"), system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 400;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.science-table td {
+  padding: 0.9rem 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.science-table tr:last-child td {
+  border-bottom: none;
+}
+
+.science-table tbody tr {
+  transition: background 0.15s;
+}
+
+.science-table tbody tr:hover {
+  background: rgba(192, 64, 48, 0.04);
+}
+
+.dark .science-table tbody tr:hover {
+  background: rgba(212, 144, 122, 0.05);
+}
+
+.science-table td strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.science-table td em {
+  color: var(--clr-terracotta);
+  font-style: italic;
+}
+
+.dark .science-table td em {
+  color: var(--clr-rose);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CHUNK 6 — Learn Page (FAQ)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.faq-item {
+  padding: 1.5rem 1.75rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-card);
+  transition: background 0.2s var(--ease-out);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item:hover {
+  background: var(--surface);
+}
+
+.faq-q {
+  font-family: var(--font-outfit, "Outfit"), system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.faq-a {
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.dark .faq-a {
+  color: rgba(242, 232, 224, 0.65);
+}
+
+/* Scroll reveal */
+@supports (animation-timeline: view()) {
+  .faq-item {
+    animation: reveal-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CHUNK 7 — Contact Page
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.contact-item-icon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.6rem;
+  background: rgba(192, 64, 48, 0.08);
+  color: var(--clr-terracotta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin-top: 0.1rem;
+}
+
+.dark .contact-item-icon {
+  background: rgba(212, 144, 122, 0.1);
+  color: var(--clr-rose);
+}
+
+.contact-item-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.contact-item-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.contact-item-link {
+  color: var(--clr-terracotta);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.contact-item-link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+.dark .contact-item-link {
+  color: var(--clr-rose);
+}
+
+.contact-item-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.contact-cta-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-cta-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-cta-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-terracotta);
+}
+
+.dark .contact-cta-tag {
+  color: var(--clr-rose);
+}
+
+.contact-cta-title {
+  font-family: var(--font-anton, "Anton"), system-ui, sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.contact-cta-body {
+  font-size: 0.88rem;
+  line-height: 1.72;
+  color: var(--text-secondary);
+}
