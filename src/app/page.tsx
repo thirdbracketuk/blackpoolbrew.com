@@ -269,6 +269,14 @@ export default function HomePage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const pills = document.querySelector(".hero-pills") as HTMLElement;
+    if (!pills) return;
+    const stripWidth = pills.scrollWidth / 2;
+    const speed = 80;
+    pills.style.setProperty("--marquee-duration", `${stripWidth / speed}s`);
+  }, []);
+
   return (
     <div className="page">
       <Navbar />

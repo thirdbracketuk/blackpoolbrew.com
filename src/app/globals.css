@@ -28,6 +28,10 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
   font-family: var(--font-outfit, "Outfit"), system-ui, sans-serif;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "calt" 1;
 }
 
 .dark {
@@ -63,8 +67,8 @@ html {
 body {
   background-color: var(--surface);
   color: var(--text-primary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
   font-size: 1rem;
   line-height: 1.6;
   transition:
@@ -311,7 +315,7 @@ body {
 
 /* Description */
 .hero-desc {
-  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
   font-weight: 400;
   line-height: 1.75;
   color: var(--text-secondary);
@@ -774,7 +778,7 @@ body {
 }
 
 .option-desc {
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.7;
   color: var(--text-muted);
@@ -855,14 +859,19 @@ body {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+  .hero-pills {
+    animation-duration: 30s !important;
+    animation-delay: 0s !important;
+    animation-play-state: paused !important;
   }
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    Ingredient Pills — horizontal scroll on mobile
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-/* ── Ingredient Marquee — auto-scrolling ── */
 .hero-pills-wrap {
   position: relative;
   width: 100%;
@@ -874,12 +883,11 @@ body {
   flex-wrap: nowrap;
   gap: 0.5rem;
   padding: 0.4rem 0;
-  /* Marquee animation */
-  animation: marquee-scroll 22s linear infinite;
   width: max-content;
+
+  animation: marquee-scroll var(--marquee-duration, 30s) linear infinite;
 }
 
-/* Pause on hover */
 .hero-pills-wrap:hover .hero-pills {
   animation-play-state: paused;
 }
@@ -1227,7 +1235,7 @@ body {
 }
 
 .section-sub {
-  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
   color: var(--text-muted);
   font-weight: 400;
   max-width: 44ch;
@@ -1302,7 +1310,7 @@ body {
 }
 
 .brew-step-text {
-  font-size: 0.92rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: var(--text-secondary);
 }
@@ -1396,7 +1404,7 @@ body {
 }
 
 .why-body {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.72;
   color: var(--text-secondary);
 }
@@ -1476,7 +1484,7 @@ body {
 }
 
 .poss-card-body {
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.72;
   color: var(--text-muted);
 }
@@ -1915,16 +1923,6 @@ body {
   animation: hero-rise 0.7s 0.66s var(--ease-out) both;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-delay: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    Ingredients Benefits Section
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -2075,7 +2073,7 @@ body {
 }
 
 .ing-card-desc {
-  font-size: 0.78rem;
+  font-size: 1rem;
   line-height: 1.65;
   color: var(--text-muted);
   margin-top: 0.2rem;
@@ -2201,7 +2199,7 @@ body {
 }
 
 .page-hero-sub {
-  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
   color: var(--text-muted);
   max-width: 48ch;
   line-height: 1.75;
@@ -2358,7 +2356,6 @@ body {
 }
 
 .about-logo-wrap {
-  border-radius: 50%;
   background: #2c1208;
   padding: clamp(2rem, 5vw, 3.5rem);
   display: flex;
@@ -2590,7 +2587,7 @@ body {
 }
 
 .ing-full-desc {
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.72;
   color: var(--text-secondary);
   flex: 1;
@@ -2743,7 +2740,7 @@ body {
 }
 
 .faq-a {
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.75;
   color: var(--text-secondary);
 }
@@ -2847,7 +2844,7 @@ body {
 }
 
 .contact-item-note {
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--text-muted);
   margin-top: 0.2rem;
 }
@@ -2889,7 +2886,7 @@ body {
 }
 
 .contact-cta-body {
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.72;
   color: var(--text-secondary);
 }
@@ -3173,7 +3170,7 @@ body {
 }
 
 .review-body {
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.75;
   color: var(--text-secondary);
   flex: 1;
@@ -3275,7 +3272,7 @@ body {
 }
 
 .hp-faq-a {
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.78;
   color: var(--text-secondary);
   margin-top: 0.85rem;
@@ -3342,7 +3339,7 @@ body {
 }
 
 .footer-v2-brand-desc {
-  font-size: 0.83rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: var(--text-secondary);
   margin-bottom: 1.25rem;
@@ -3388,7 +3385,7 @@ body {
 }
 
 .footer-v2-link {
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: var(--text-secondary);
   text-decoration: none;
   padding: 0.3rem 0;
@@ -3428,7 +3425,7 @@ body {
 }
 
 .footer-v2-address {
-  font-size: 0.83rem;
+  font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.5;
 }
@@ -3604,7 +3601,7 @@ body {
 }
 
 .quality-result-detail {
-  font-size: 0.83rem;
+  font-size: 1rem;
   line-height: 1.65;
   color: var(--text-secondary);
 }
