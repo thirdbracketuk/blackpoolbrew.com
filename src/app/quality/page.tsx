@@ -4,7 +4,7 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PageHero from "../components/PageHero";
-import { FaWhatsapp, FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Quality & Testing | Blackpool Brew — Lab Tested, Compliance Verified",
@@ -370,26 +370,25 @@ export default function QualityPage() {
       </section>
 
       {/* ── CTA ── */}
+      {/* ── CTA Banner ────────────────────────────────────────── */}
       <section className="section section--cta">
         <div className="cta-banner">
           <div className="cta-banner-content">
-            <span className="cta-banner-tag">🎁 Limited Time Offer</span>
-            <h2 className="cta-banner-title">Tested. Trusted. Free to Try.</h2>
+            <span className="cta-banner-tag">📩 Still Have Questions?</span>
+            <h2 className="cta-banner-title">
+              We&apos;d Love to Hear From You
+            </h2>
             <p className="cta-banner-sub">
-              You have seen the results. Now taste the difference. Claim your
-              free sample with no commitment required.
+              Whether it&apos;s about our quality process, ingredients, or
+              anything else — our team is happy to help. Get in touch and
+              we&apos;ll respond promptly.
             </p>
             <div className="cta-banner-actions">
-              <a
-                href="https://wa.me/447507155382?text=Hi%2C%20I%27d%20like%20to%20claim%20my%20free%20Blackpool%20Brew%20sample!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-banner-btn"
-              >
-                <FaWhatsapp size={20} /> Claim Your Free Sample
-              </a>
+              <Link href="/contact" className="cta-banner-btn">
+                Get In Touch
+              </Link>
               <p className="cta-banner-note">
-                No commitment · Free delivery · While stocks last
+                We typically respond within 24 hours
               </p>
             </div>
           </div>

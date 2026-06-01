@@ -205,7 +205,7 @@ const REVIEWS = [
     name: "Priya K.",
     location: "Blackpool",
     stars: 5,
-    body: "I grew up drinking spiced teas and this blend is absolutely beautiful. You can tell it's handcrafted with care. The star anise and cardamom come through perfectly.",
+    body: "I grew up drinking spiced teas and this blend is absolutely beautiful. You can tell it's crafted with care. The star anise and cardamom come through perfectly.",
   },
   {
     name: "Tom W.",
@@ -230,7 +230,7 @@ const REVIEWS = [
 const FAQS = [
   {
     q: "What exactly is Blackpool Brew?",
-    a: "Blackpool Brew is a handcrafted herbal blend of 14 ancient herbs and spices, crafted in Blackpool, UK. It is designed to be brewed as a hot drink — similar to tea — and delivers targeted support across five wellness pillars: gut health, mental clarity, immunity, mood, and energy. It contains no caffeine, no added sugar, and no artificial additives.",
+    a: "Blackpool Brew is a crafted herbal blend of 14 ancient herbs and spices, crafted in Blackpool, UK. It is designed to be brewed as a hot drink — similar to tea — and delivers targeted support across five wellness pillars: gut health, mental clarity, immunity, mood, and energy. It contains no caffeine, no added sugar, and no artificial additives.",
   },
   {
     q: "How do I make it?",
@@ -307,7 +307,7 @@ export default function HomePage() {
           <div className="hero-copy-side">
             <span className="hero-origin">
               <span className="hero-origin-dot" />
-              100% Plant-Based · Handcrafted in Blackpool, UK
+              100% Plant-Based · Crafted in Blackpool, UK
             </span>
             <h1 className="hero-headline">
               Ancient Spices.
@@ -410,7 +410,7 @@ export default function HomePage() {
               Built for Wellness.
             </h2>
             <p className="section-sub">
-              Blackpool Brew is a handcrafted herbal blend rooted in ancient
+              Blackpool Brew is a crafted herbal blend rooted in ancient
               Ayurvedic tradition, made with care in the heart of Blackpool, UK.
             </p>
           </div>
@@ -437,7 +437,7 @@ export default function HomePage() {
               {
                 icon: "🏆",
                 color: "gold",
-                title: "Handcrafted in Blackpool",
+                title: "Crafted in Blackpool",
                 body: "Born and crafted in Blackpool, UK. A local blend with a legacy, inspired by ancient spice traditions from across the world.",
               },
             ].map((w) => (
@@ -691,24 +691,19 @@ export default function HomePage() {
       <section className="section section--cta">
         <div className="cta-banner">
           <div className="cta-banner-content">
-            <span className="cta-banner-tag">🎁 Limited Time Offer</span>
-            <h2 className="cta-banner-title">Try It Free Today</h2>
+            <span className="cta-banner-tag">📩 Get In Touch</span>
+            <h2 className="cta-banner-title">Want to Know More?</h2>
             <p className="cta-banner-sub">
-              We are offering free samples to new customers. Reach out on
-              WhatsApp and we will get one sent to you — no commitment, no fuss,
-              just good brew.
+              Have a question about Blackpool Brew? We&apos;d love to hear from
+              you. Reach out to us and we&apos;ll get back to you as soon as
+              possible.
             </p>
             <div className="cta-banner-actions">
-              <a
-                href="https://wa.me/447507155382?text=Hi%2C%20I%27d%20like%20to%20claim%20my%20free%20Blackpool%20Brew%20sample!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-banner-btn"
-              >
-                <FaWhatsapp size={20} /> Claim Your Free Sample
-              </a>
+              <Link href="/contact" className="cta-banner-btn">
+                Get In Touch
+              </Link>
               <p className="cta-banner-note">
-                No commitment · Free delivery · While stocks last
+                We typically respond within 24 hours
               </p>
             </div>
           </div>

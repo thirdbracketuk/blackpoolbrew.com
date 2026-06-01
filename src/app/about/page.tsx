@@ -4,7 +4,6 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PageHero from "../components/PageHero";
-import { FaWhatsapp } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "About Blackpool Brew | Handcrafted Herbal Blend, Blackpool UK",
@@ -224,26 +223,24 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA ── */}
+      {/* ── CTA Banner ────────────────────────────────────────── */}
       <section className="section section--cta">
         <div className="cta-banner">
           <div className="cta-banner-content">
-            <span className="cta-banner-tag">🎁 Limited Time Offer</span>
-            <h2 className="cta-banner-title">Experience It Yourself</h2>
+            <span className="cta-banner-tag">🌿 Our Story</span>
+            <h2 className="cta-banner-title">
+              Curious About What&apos;s Inside?
+            </h2>
             <p className="cta-banner-sub">
-              The best way to understand Blackpool Brew is to taste it. Claim
-              your free sample today — no commitment required.
+              Now that you know who we are, discover the carefully selected
+              ingredients that make Blackpool Brew truly special.
             </p>
             <div className="cta-banner-actions">
-              <a
-                href="https://wa.me/447507155382?text=Hi%2C%20I%27d%20like%20to%20claim%20my%20free%20Blackpool%20Brew%20sample!"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-banner-btn"
-              >
-                <FaWhatsapp size={20} /> Claim Your Free Sample
-              </a>
+              <Link href="/ingredients" className="cta-banner-btn">
+                Explore Ingredients
+              </Link>
               <p className="cta-banner-note">
-                No commitment · Free delivery · While stocks last
+                100% natural · No additives · Honest brewing
               </p>
             </div>
           </div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ThemeToggle } from "@thirdbracket/bracketui";
-import { FaWhatsapp, FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const NAV_LINKS = [
   { label: "About", href: "/about" },
@@ -40,6 +40,7 @@ export default function Navbar() {
           </div>
           <span className="navbar-brand-text">Blackpool Brew</span>
         </Link>
+
         <div className="navbar-links">
           {NAV_LINKS.map((l) => (
             <Link key={l.label} href={l.href} className="navbar-link">
@@ -47,16 +48,12 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
+
         <div className="navbar-actions">
           <ThemeToggle />
-          <a
-            href="https://wa.me/447507155382?text=Hi%2C%20I%27d%20like%20to%20claim%20my%20free%20Blackpool%20Brew%20sample!"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="navbar-cta"
-          >
-            Free Sample
-          </a>
+          <Link href="/contact" className="navbar-cta">
+            Contact Us
+          </Link>
           <button
             className="navbar-burger"
             onClick={() => setMenuOpen((v) => !v)}
@@ -66,6 +63,7 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+
       <div className={`navbar-mobile ${menuOpen ? "navbar-mobile--open" : ""}`}>
         {NAV_LINKS.map((l) => (
           <Link
@@ -77,15 +75,13 @@ export default function Navbar() {
             {l.label}
           </Link>
         ))}
-        <a
-          href="https://wa.me/447507155382?text=Hi%2C%20I%27d%20like%20to%20claim%20my%20free%20Blackpool%20Brew%20sample!"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/contact"
           className="navbar-mobile-cta"
           onClick={() => setMenuOpen(false)}
         >
-          <FaWhatsapp /> Claim Free Sample
-        </a>
+          Contact Us
+        </Link>
       </div>
     </nav>
   );

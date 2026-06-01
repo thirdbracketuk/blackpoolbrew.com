@@ -40,9 +40,7 @@ export default function Footer() {
               />
               <div>
                 <p className="footer-v2-brand-name">Blackpool Brew</p>
-                <p className="footer-v2-brand-tag">
-                  Handcrafted in Blackpool, UK
-                </p>
+                <p className="footer-v2-brand-tag">Crafted in Blackpool, UK</p>
               </div>
             </div>
             <p className="footer-v2-brand-desc">
@@ -50,12 +48,12 @@ export default function Footer() {
               vegan, and independently lab tested.
             </p>
             <a
-              href="https://wa.me/447507155382?text=Hi%2C%20I%27d%20like%20to%20claim%20my%20free%20Blackpool%20Brew%20sample!"
+              href="https://wa.me/447507155382?text=Hi%2C%20I%20want%20to%20know%20about%20Blackpool%20Brew!"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-v2-wa-btn"
             >
-              <FaWhatsapp size={15} /> Claim a Free Sample
+              <FaWhatsapp size={15} /> Send us a message
             </a>
           </div>
 
@@ -79,8 +77,8 @@ export default function Footer() {
             <ul className="footer-v2-contact-list">
               <li>
                 <FaPhone size={12} className="footer-v2-contact-icon" />
-                <a href="tel:+447432654441" className="footer-v2-link">
-                  +44 7432 654441
+                <a href="tel:+447507155382" className="footer-v2-link">
+                  +44 7507 155382
                 </a>
               </li>
               <li>
@@ -95,7 +93,7 @@ export default function Footer() {
               <li>
                 <FaMapMarkerAlt size={12} className="footer-v2-contact-icon" />
                 <span className="footer-v2-address">
-                  7 Topping Street,
+                  7-9 Topping Street,
                   <br />
                   Blackpool, FY1 3AX
                 </span>
