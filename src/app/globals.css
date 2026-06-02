@@ -1014,7 +1014,7 @@ body {
   font-size: 1rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   transition: color 0.3s var(--ease-out);
 }
 
@@ -1300,6 +1300,7 @@ body {
 .brew-step-title {
   font-family: var(--font-anton, "Anton"), system-ui, sans-serif;
   font-size: 1.3rem;
+  margin-bottom: 0.5rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--clr-terracotta);
@@ -1311,8 +1312,8 @@ body {
 
 .brew-step-text {
   font-size: 1rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
+  line-height: 1.5;
+  color: var(--text-muted);
 }
 
 .brew-note {
@@ -2588,8 +2589,8 @@ body {
 
 .ing-full-desc {
   font-size: 1rem;
-  line-height: 1.72;
-  color: var(--text-secondary);
+  line-height: 1.5;
+  color: var(--text-muted);
   flex: 1;
 }
 
@@ -3318,8 +3319,7 @@ body {
 .footer-v2-logo {
   width: 48px;
   height: 48px;
-  border-radius: 50%;
-  background: #1a0a04;
+
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -3328,7 +3328,7 @@ body {
   font-family: var(--font-outfit, "Outfit"), system-ui, sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--clr-terracotta);
   line-height: 1.2;
 }
 
@@ -3528,7 +3528,7 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #4a9e6b, #2a7a5a);
+  background: linear-gradient(90deg, #51a2724d, #9999994d);
 }
 
 .quality-result-card:hover {
@@ -3539,6 +3539,7 @@ body {
 .quality-result-header {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   gap: 0.85rem;
 }
 

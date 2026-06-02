@@ -229,11 +229,11 @@ export default function QualityPage() {
             {LAB_RESULTS.map((r) => (
               <div key={r.test} className="quality-result-card">
                 <div className="quality-result-header">
-                  <FaCheckCircle className="quality-result-icon" />
                   <div>
                     <h3 className="quality-result-test">{r.test}</h3>
                     <span className="quality-result-badge">{r.result}</span>
                   </div>
+                  <FaCheckCircle className="quality-result-icon" />
                 </div>
                 <p className="quality-result-detail">{r.detail}</p>
               </div>
@@ -279,7 +279,7 @@ export default function QualityPage() {
           </div>
 
           <div className="brew-note" style={{ marginTop: "2rem" }}>
-            <span className="brew-note-icon">📄</span>
+            <span className="brew-note-icon">✨</span>
             <p>
               Full Certificates of Analysis are available upon request. Contact
               us at <strong>info@blackpoolbrew.com</strong> to request
@@ -333,7 +333,7 @@ export default function QualityPage() {
           <div className="why-grid">
             {[
               {
-                icon: "✅",
+                icon: "📢",
                 color: "green",
                 title: "Full Ingredient Disclosure",
                 body: "Every ingredient is listed on the label. No proprietary blends, no hidden additives, no mystery compounds. What you see is precisely what you get.",

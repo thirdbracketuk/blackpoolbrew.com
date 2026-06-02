@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import {
-  FaWhatsapp,
   FaLeaf,
   FaHeartbeat,
   FaFlask,
@@ -37,86 +36,86 @@ const INGREDIENTS_MARQUEE = [
 const BLEND_CARDS = [
   {
     name: "Fennel Seeds",
-    icon: "🌿",
-    color: "#4a9e6b",
+    icon: "🥖",
+    color: "#D4A373",
     role: "Gut Health",
     slug: "fennel-seeds",
   },
   {
     name: "Nutmeg",
     icon: "🟤",
-    color: "#b88820",
+    color: "#b76d54",
     role: "Clarity",
     slug: "nutmeg",
   },
   {
     name: "White Peppercorn",
     icon: "⚪",
-    color: "#9a8a70",
+    color: "#b2b2b2",
     role: "Energy",
     slug: "white-peppercorn",
   },
   {
     name: "Cinnamon",
     icon: "🪵",
-    color: "#C04030",
+    color: "#b17456",
     role: "Focus",
     slug: "cinnamon",
   },
   {
     name: "Black Peppercorn",
     icon: "⚫",
-    color: "#555555",
+    color: "#424242",
     role: "Absorption",
     slug: "black-peppercorn",
   },
   {
     name: "Black Cumin",
-    icon: "🌱",
-    color: "#2a7a5a",
+    icon: "🖤",
+    color: "#424242",
     role: "Immunity",
     slug: "black-cumin-seeds",
   },
   {
     name: "Cloves",
-    icon: "🌰",
-    color: "#8B3A62",
+    icon: "👃🏿",
+    color: "#70534a",
     role: "Antiviral",
     slug: "cloves",
   },
   {
     name: "Green Cardamom",
     icon: "💚",
-    color: "#4CAF50",
+    color: "#7cb342",
     role: "Mood",
     slug: "green-cardamom",
   },
   {
     name: "Black Cardamom",
-    icon: "🫛",
-    color: "#3d5a3e",
+    icon: "🤎",
+    color: "#b76d54",
     role: "Oxygenation",
     slug: "black-cardamom",
   },
   {
     name: "Star Anise",
     icon: "⭐",
-    color: "#d4a017",
+    color: "#f77e00",
     role: "Immunity",
     slug: "star-anise",
   },
-  { name: "Mace", icon: "🧡", color: "#c07820", role: "Mood", slug: "mace" },
+  { name: "Mace", icon: "🩸", color: "#e63f38", role: "Mood", slug: "mace" },
   {
     name: "Bay Leaves",
-    icon: "🍃",
-    color: "#5a8a5a",
+    icon: "🍂",
+    color: "#c26539",
     role: "Detox",
     slug: "bay-leaves",
   },
   {
     name: "Black Onion Seeds",
-    icon: "🖤",
-    color: "#6a5a8a",
+    icon: "♠️",
+    color: "#464c4f",
     role: "Immunity",
     slug: "black-onion-seeds",
   },
@@ -348,14 +347,14 @@ export default function HomePage() {
             </div>
             <div className="hero-cta-row">
               <a
-                href="https://wa.me/447507155382?text=Hi%2C%20I%27d%20like%20to%20claim%20my%20free%20Blackpool%20Brew%20sample!"
+                href="/about"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hero-cta-btn"
               >
-                <FaWhatsapp size={18} /> Claim Your Free Sample
+                Learn About Us
               </a>
-              <span className="hero-cta-note">Free samples · Limited time</span>
+              <span className="hero-cta-note">The Origin · Philosophy</span>
             </div>
           </div>
         </div>

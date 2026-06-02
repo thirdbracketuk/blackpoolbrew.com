@@ -293,7 +293,7 @@ export default function SciencePage() {
             className="brew-note"
             style={{ maxWidth: "56rem", margin: "0 auto" }}
           >
-            <span className="brew-note-icon">🔬</span>
+            <span className="brew-note-icon">✨</span>
             <div>
               <p style={{ marginBottom: "0.75rem" }}>
                 Because this is a Loose Brew Mix, the 0.4g of powder has a

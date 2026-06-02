@@ -122,7 +122,7 @@ export default function BenefitsPage() {
       <section className="section section--brew">
         <div className="section-inner">
           <div className="brew-note" style={{ marginBottom: "2rem" }}>
-            <span className="brew-note-icon">🔗</span>
+            <span className="brew-note-icon">✨</span>
             <p>
               <strong>The Gut-Brain Axis:</strong> These five pillars are deeply
               interconnected. About 90% of your body&apos;s serotonin (the
@@ -160,7 +160,7 @@ export default function BenefitsPage() {
                   <p className="about-body">{b.body}</p>
                   <p className="about-body">{b.mechanism}</p>
                   <div className="brew-note">
-                    <span className="brew-note-icon">✔️</span>
+                    <span className="brew-note-icon">✨</span>
                     <p>
                       <strong>Key Benefit:</strong> {b.benefit}
                     </p>

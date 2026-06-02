@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="footer-v2-brand">
             <div className="footer-v2-logo-wrap">
               <Image
-                src="/logo.png"
+                src="/logo-small.svg"
                 alt="Blackpool Brew"
                 width={56}
                 height={56}
