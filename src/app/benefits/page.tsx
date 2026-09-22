@@ -8,13 +8,13 @@ import PageHero from "../components/PageHero";
 export const metadata: Metadata = {
   title: "Benefits | Blackpool Brew — 5 Wellness Pillars",
   description:
-    "Discover how Blackpool Brew supports gut health, mental clarity, immunity, mood and focus through 14 ancient herbs and spices.",
+    "Discover how Blackpool Brew supports digestive comfort, mindful clarity, traditional shield, inner calm and revitalise through 14 ancient herbs and spices.",
 };
 
 const BENEFITS = [
   {
     icon: "🍃",
-    pillar: "Gut Health",
+    pillar: "Digestive Comfort",
     tag: "The Digestive Fire",
     headline: "Your Gut Is Your Second Brain",
     body: 'Often called the "second brain," your gut is home to trillions of microbes that influence everything from digestion to mood. Nearly every ingredient in Blackpool Brew is a carminative (gas-reliever) or digestive stimulant.',
@@ -26,17 +26,17 @@ const BENEFITS = [
       "Green Cardamom",
     ],
     mechanism:
-      "Fennel Seeds are the gold standard for gut health — they relax the smooth muscles of the digestive tract to stop cramping and bloating. Ginger and both Peppercorns create thermogenesis, physically warming the stomach and stimulating the production of hydrochloric acid and enzymes needed to break down heavy proteins and fats.",
+      "Fennel Seeds are the gold standard for digestive comfort — they relax the smooth muscles of the digestive tract to stop cramping and bloating. Ginger and both Peppercorns create thermogenesis, physically warming the stomach and stimulating the production of hydrochloric acid and enzymes needed to break down heavy proteins and fats.",
     benefit:
       "Better nutrient absorption, reduced bloating, and a calmer, more efficient digestive system.",
     compound: "Anethole (Fennel) · Gingerol (Ginger) · Piperine (Pepper)",
   },
   {
     icon: "🧠",
-    pillar: "Mental Clarity",
+    pillar: "Mindful Clarity",
     tag: "The Brain Boosters",
     headline: "Clear the Fog. Sharpen the Mind.",
-    body: "Mental clarity refers to the ability to think clearly, remember information, and stay sharp without brain fog. These spices help by improving blood flow and regulating blood sugar — the brain's primary fuel source.",
+    body: "Mindful clarity refers to the ability to think clearly, remember information, and stay sharp without brain fog. These spices help by improving blood flow and regulating blood sugar — the brain's primary fuel source.",
     keyIngredients: [
       "Cinnamon",
       "Nutmeg",
@@ -53,7 +53,7 @@ const BENEFITS = [
   },
   {
     icon: "🛡️",
-    pillar: "Immunity Support",
+    pillar: "Traditional Shield",
     tag: "The Antiviral Shield",
     headline: "Your Body's Botanical Defence System",
     body: "Your body's defence system against pathogens like viruses and bacteria. This blend is exceptionally rich in antimicrobial and antiviral compounds — some of the most potent found in the natural world.",
@@ -72,7 +72,7 @@ const BENEFITS = [
   },
   {
     icon: "🧘",
-    pillar: "Mood Support",
+    pillar: "Inner Calm",
     tag: "The Nervous System Calmers",
     headline: "Grounded. Balanced. Calm.",
     body: "Emotional regulation and the management of daily stress levels. While some spices energise, others soothe the nervous system to prevent stress-induced burnout. The aroma alone begins working before the first sip.",
@@ -86,7 +86,7 @@ const BENEFITS = [
   },
   {
     icon: "⚡",
-    pillar: "Focus & Energy",
+    pillar: "Revitalise",
     tag: "The Bioavailability Key",
     headline: "Sustained Energy. No Crash.",
     body: "The ability to maintain attention on a task and the physical vitality to get through the day — without the crash associated with high caffeine. This blend uses metabolic heat rather than stimulants.",

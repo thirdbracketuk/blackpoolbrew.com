@@ -132,33 +132,33 @@ const BLEND_CARDS = [
 const WELLNESS_PILLARS = [
   {
     icon: "🍃",
-    title: "Gut Health",
+    title: "Digestive Comfort",
     body: "Fennel, Ginger and both Peppercorns act as carminatives, soothing the digestive tract and stimulating the enzymes needed to break down heavy proteins and fats.",
-    anchor: "gut-health",
+    anchor: "digestive-comfort",
   },
   {
     icon: "🧠",
-    title: "Mental Clarity",
+    title: "Mindful Clarity",
     body: "Cinnamon stabilises blood sugar to prevent the afternoon slump, while Nutmeg and Mace deliver neuroprotective Myristicin to clear brain fog and sharpen memory.",
-    anchor: "mental-clarity",
+    anchor: "mindful-clarity",
   },
   {
     icon: "🛡️",
-    title: "Immunity Support",
+    title: "Traditional Shield",
     body: "Star Anise provides Shikimic Acid, the molecular precursor used to manufacture Tamiflu. Clove and Black Cumin reinforce the body's natural antiviral defences.",
-    anchor: "immunity-support",
+    anchor: "traditional-shield",
   },
   {
     icon: "🧘",
-    title: "Mood Support",
+    title: "Inner Calm",
     body: "Green Cardamom and Mace act as natural nervines, calming the nervous system and supporting emotional balance. The aroma begins working before the first sip.",
-    anchor: "mood-support",
+    anchor: "inner-calm",
   },
   {
     icon: "⚡",
-    title: "Focus and Energy",
+    title: "Revitalise",
     body: "Black Pepper's Piperine increases nutrient absorption by up to 2000%, while Bay Leaves and Black Cardamom contain Cineole to open airways and improve oxygenation.",
-    anchor: "focus-energy",
+    anchor: "revitalise",
   },
 ];
 
